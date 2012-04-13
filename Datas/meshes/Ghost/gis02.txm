@@ -1,0 +1,327 @@
+//--------------------------------------------------------------------------
+//            +-------------------------------------+
+//            |                                     |
+//            | Bibliotheque de Material pour U3D3  |
+//            |                                     |
+//            |                     U2^PoPsY TeAm   |
+//            +-------------------------------------+
+//--------------------------------------------------------------------------
+//--------------------------------------------------------------------------
+
+
+//--------------------------------------
+//			Texture List
+//--------------------------------------
+
+Repertoire Datas/meshes/Ghost/
+
+TileTex
+Open envmap.jpg
+
+TileTex
+Open eclair.jpg
+
+TileTex
+Open toit_256.jpg
+
+TileTex
+Open Aero_g_256.jpg
+
+TileTex
+Open Basshaut_256.jpg
+
+TileTex
+Open bassex_256.jpg
+
+TileTex
+Open mur_low_256.jpg
+
+TileTex
+Open Sol_1.jpg
+
+TileTex
+Open Sol_3.jpg
+
+TileTex
+Open Sol_2.jpg
+
+TileTex
+Open Sol_4.jpg
+
+TileTex
+Open cote_bassin_256.jpg
+
+TileTex
+Open vitre.jpg
+
+TileTex
+Open unreal.jpg
+
+TileTex
+Open metal.jpg
+
+TileTex
+Open glace.jpg
+
+TileTex
+Open aero2_256.jpg
+
+TileTex
+Open fond_bassin_256.jpg
+
+TileTex
+Open mur_mid_256.jpg
+
+TileTex
+Open Aero_d_256.jpg
+
+TileTex
+Open HAUT_256.jpg
+
+TileTex
+Open BAS_256.jpg
+
+TileTex
+Open COTE.jpg
+
+
+//--------------------------------------
+// Liste des materials
+//--------------------------------------
+
+Material AERO 
+	Couleur Solid R 255 V 255 B 255 A 255
+	Shading Gouraud
+	Tex1 aero2_256.jpg
+	PosTex1 U 0.000 V 0.000
+	DeltaTex1 U 255.000 V 255.000
+
+Material AERO_B 
+	Couleur Solid R 255 V 255 B 255 A 255
+	Shading Gouraud
+	Tex1 bassex_256.jpg
+	PosTex1 U 0.000 V 0.000
+	DeltaTex1 U 255.000 V 255.000
+
+Material AERO_D 
+	Couleur Solid R 195 V 173 B 173 A 255
+	Shading Gouraud
+	Tex1 Aero_d_256.jpg
+	PosTex1 U 0.000 V 0.000
+	DeltaTex1 U 63.000 V 63.000
+
+Material AERO_G 
+	Couleur Solid R 195 V 173 B 173 A 255
+	Shading Gouraud
+	Tex1 Aero_g_256.jpg
+	PosTex1 U 0.000 V 0.000
+	DeltaTex1 U 63.000 V 63.000
+
+Material AERO_H 
+	Couleur Solid R 255 V 255 B 255 A 255
+	Shading Gouraud
+	Tex1 bassex_256.jpg
+	PosTex1 U 0.000 V 0.000
+	DeltaTex1 U 255.000 V 255.000
+
+Material BAS 
+	Couleur Solid R 255 V 255 B 255 A 255
+	Shading Gouraud
+	Tex1 BAS_256.jpg
+	PosTex1 U 0.000 V 0.000
+	DeltaTex1 U 255.000 V 255.000
+
+Material BASSEX 
+	Couleur Solid R 255 V 255 B 255 A 255
+	Shading Gouraud
+	Tex1 bassex_256.jpg
+	PosTex1 U 0.000 V 0.000
+	DeltaTex1 U 255.000 V 255.000
+
+Material BASSEXBIAI 
+	Couleur Solid R 255 V 255 B 255 A 255
+	Shading Gouraud
+	Tex1 bassex_256.jpg
+	PosTex1 U 0.000 V 0.000
+	DeltaTex1 U 255.000 V 255.000
+
+Material BASSHAUT 
+	Couleur Solid R 255 V 255 B 255 A 255
+	Shading Gouraud
+	Tex1 Basshaut_256.jpg
+	PosTex1 U 0.000 V 0.000
+	DeltaTex1 U 255.000 V 255.000
+
+Material BASSINBIAI 
+	Couleur Solid R 255 V 255 B 255 A 255
+	Shading Gouraud
+	Tex1 bassex_256.jpg
+	PosTex1 U 0.000 V 0.000
+	DeltaTex1 U 255.000 V 255.000
+
+Material CORPS 
+	Couleur Solid R 255 V 255 B 255 A 255
+	Shading Gouraud
+	Tex1 metal.jpg
+	PosTex1 U 0.000 V 0.000
+	DeltaTex1 U 127.000 V 127.000
+
+Material COTE 
+	Couleur Solid R 255 V 255 B 255 A 255
+	Shading Gouraud
+	Tex1 COTE.jpg
+	PosTex1 U 0.000 V 0.000
+	DeltaTex1 U 127.000 V 127.000
+
+Material COTE_BASSIN 
+	Couleur Solid R 200 V 200 B 200 A 255
+	Shading Gouraud
+	Tex1 cote_bassin_256.jpg
+	PosTex1 U 0.000 V 0.000
+	DeltaTex1 U 255.000 V 255.000
+
+Material CYLINDRE_B 
+	Couleur Solid R 170 V 150 B 150 A 255
+	Shading Gouraud
+	Tex1 Basshaut_256.jpg
+	PosTex1 U 0.000 V 0.000
+	DeltaTex1 U 255.000 V 255.000
+
+Material CYLINDRE_S 
+	Couleur Solid R 255 V 255 B 255 A 255
+	Shading Gouraud
+	Tex1 mur_low_256.jpg
+	PosTex1 U 0.000 V 0.000
+	DeltaTex1 U 255.000 V 255.000
+
+Material Default 
+	Couleur Solid R 255 V 255 B 255 A 255
+	Shading Gouraud
+	Tex1 glace.jpg
+	PosTex1 U 0.000 V 0.000
+	DeltaTex1 U 255.000 V 255.000
+
+Material EAU 
+	Couleur Solid R 108 V 109 B 109 A 48
+	Shading Gouraud
+	Transp Add
+	Tex1 unreal.jpg
+	PosTex1 U 0.000 V 0.000
+	DeltaTex1 U 255.000 V 255.000
+
+Material Eclair 
+	Couleur Solid R 255 V 255 B 255 A 255
+	2side
+	Shading Flat
+	Transp AAdd
+	Tex1 eclair.jpg
+	PosTex1 U 0.000 V 0.000
+	DeltaTex1 U 63.000 V 127.000
+
+Material FOND_BASSIN 
+	Couleur Solid R 145 V 145 B 145 A 184
+	Shading Gouraud
+	Tex1 fond_bassin_256.jpg
+	PosTex1 U 0.000 V 0.000
+	DeltaTex1 U 255.000 V 255.000
+
+Material HAUT 
+	Couleur Solid R 255 V 255 B 255 A 255
+	Shading Gouraud
+	Tex1 HAUT_256.jpg
+	PosTex1 U 0.000 V 0.000
+	DeltaTex1 U 255.000 V 255.000
+
+Material MUR_HIG 
+	Couleur Solid R 255 V 255 B 255 A 255
+	Shading Gouraud
+	Tex1 mur_low_256.jpg
+	PosTex1 U 0.000 V 0.000
+	DeltaTex1 U 255.000 V 255.000
+
+Material MUR_LOW 
+	Couleur Solid R 255 V 255 B 255 A 255
+	Shading Gouraud
+	Tex1 mur_low_256.jpg
+	PosTex1 U 0.000 V 0.000
+	DeltaTex1 U 255.000 V 255.000
+
+Material MUR_MID 
+	Couleur Solid R 255 V 255 B 255 A 255
+	Shading Gouraud
+	Tex1 mur_mid_256.jpg
+	PosTex1 U 0.000 V 0.000
+	DeltaTex1 U 255.000 V 255.000
+
+Material PRISME 
+	Couleur Solid R 255 V 255 B 255 A 82
+	Shading Gouraud
+	Tex1 vitre.jpg
+	PosTex1 U 0.000 V 0.000
+	DeltaTex1 U 255.000 V 255.000
+
+Material SIDE 
+	Couleur Solid R 255 V 255 B 255 A 255
+	Shading Gouraud
+	Tex1 mur_mid_256.jpg
+	PosTex1 U 0.000 V 0.000
+	DeltaTex1 U 255.000 V 255.000
+
+Material SOL1 
+	Couleur Solid R 255 V 255 B 255 A 255
+	Shading Gouraud
+	Tex1 Sol_1.jpg
+	PosTex1 U 0.000 V 0.000
+	DeltaTex1 U 255.000 V 255.000
+
+Material SOL2 
+	Couleur Solid R 255 V 255 B 255 A 255
+	Shading Gouraud
+	Tex1 Sol_2.jpg
+	PosTex1 U 0.000 V 0.000
+	DeltaTex1 U 255.000 V 255.000
+
+Material SOL3 
+	Couleur Solid R 255 V 255 B 255 A 255
+	Shading Gouraud
+	Tex1 Sol_3.jpg
+	PosTex1 U 0.000 V 0.000
+	DeltaTex1 U 255.000 V 255.000
+
+Material SOL4 
+	Couleur Solid R 255 V 255 B 255 A 255
+	Shading Gouraud
+	Tex1 Sol_4.jpg
+	PosTex1 U 0.000 V 0.000
+	DeltaTex1 U 255.000 V 255.000
+
+Material TOIT 
+	Couleur Solid R 160 V 129 B 58 A 255
+	Shading Gouraud
+	Tex1 toit_256.jpg
+	PosTex1 U 0.000 V 0.000
+	DeltaTex1 U 255.000 V 255.000
+
+Material TOP-1 
+	Couleur Solid R 176 V 149 B 74 A 255
+	Shading Gouraud
+	Tex1 toit_256.jpg
+	PosTex1 U 0.000 V 0.000
+	DeltaTex1 U 255.000 V 255.000
+
+Material TOP-2 
+	Couleur Solid R 255 V 255 B 255 A 255
+	Shading Gouraud
+	Tex1 bassex_256.jpg
+	PosTex1 U 0.000 V 0.000
+	DeltaTex1 U 255.000 V 255.000
+
+Material TUYAU 
+	Couleur Solid R 20 V 20 B 20 A 255
+	Shading Gouraud
+	Tex1 envmap.jpg
+	PosTex1 U 0.000 V 0.000
+	DeltaTex1 U 127.000 V 127.000
+
+EndTXM
+<>

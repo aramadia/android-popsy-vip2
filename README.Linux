@@ -1,0 +1,50 @@
+VIP2 Linux port (v1.1)
+iReleased January 26th, 2003
+http://www.sesse.net/vip2-linux/
+Original (Win32) source available from http://popsyteam.planet-d.net/u2/Vip2.htm
+
+This VIP2 port to Linux was done by Sesse/Excess <sgunderson@bigfoot.com> --
+it's a bit `quick and dirty'; for instance, there's no fancy graphical setup
+tool, it has not received extensive testing (tested on a GeForce 2MX and a
+Matrox G550 only), there is no data file support (everything is in Datas/)
+and it's not very clean codewise (not that the original VIP2 sources were
+_that_ clean either). :-) If I find the time, I'll probably release updates --
+watch the web page for future releases.
+
+This version should be considerably simpler to port to other OSes (MacOS X,
+anyone?) than the original Windows version -- all Windows dependencies have
+been removed (what probably took most of the time was writing and debugging
+micro-wrappers that work as MFC replacements, in addition to fixing all the
+case-sensitivity problems :-) ), and Skysound (which had extensive sync problems
+on Linux) has been replaced by mpglib plus my own sound code. Note that since
+mpglib is GPL, probably the entire source package here becomes GPL -- I'm not
+sure how this goes together with Popsy's original "license" ("rip as you want
+if you can create something new and different"), but heck, you're distributing
+a demo with an unlicensed MP3 anyhow :-) (Note that ports to non-x86 architectures
+would probably require some more endian fixes than those I have done.)
+
+Of course, this port could never have been done without Popsy Team releasing
+the sources to the public. Big thanks to them for being incredibly cool. :-)
+
+Building should be quite simple (no, there's no binary), just type "make" in
+the vip2/ directory. "./vip2" will launch the demo, and "./vip2 -help" will
+give you a list of supported switches (yes, I'm aware it's a bit hackish :-) ).
+Have fun, and don't hesitate to e-mail me if you have any comments or problems. :-)
+
+Sesse/Excess
+E-mail: sgunderson@bigfoot.com
+http://www.sesse.net/demo.html
+
+=== ChangeLog ===
+v1.1 (January 26th, 2003):
+- Fixed some Makefile problems (mpglib was way off, causing problems
+  on non-x86 platforms).
+- Changed all line endings from CR/LF to LF (fixes some g++ problems).
+- Removed all the exceptions from Sources/glwindow.cpp, since we compile
+  with -fomit-frame-pointer and they don't get caught then ;-) (Replaced
+  them with fprintf/exit.)
+- Endian fixes (still not tested on non-x86 platforms, though).
+- Misc. minor cleanups and fixes.
+
+v1.0 (January 15th, 2003):
+- First release.

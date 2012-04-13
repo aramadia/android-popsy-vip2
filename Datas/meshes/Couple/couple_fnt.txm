@@ -1,0 +1,64 @@
+//--------------------------------------------------------------------------
+//            +-------------------------------------+
+//            |                                     |
+//            | Bibliotheque de Material pour U3D3  |
+//            |                                     |
+//            |                     U2^PoPsY TeAm   |
+//            +-------------------------------------+
+//--------------------------------------------------------------------------
+//--------------------------------------------------------------------------
+
+
+//--------------------------------------
+//			Texture List
+//--------------------------------------
+
+//Repertoire D:/Sources/PoPsY-new/vip2/Datas/meshes/Couple/
+Repertoire Datas/meshes/Couple/
+
+TileTex
+Open cailloux.jpg
+
+TileTex
+Open sol.jpg
+
+TileTex
+Open rayon.jpg
+
+
+//--------------------------------------
+// Liste des materials
+//--------------------------------------
+
+Material AAA 
+	Couleur Solid R 255 V 255 B 255 A 255
+	Shading Rien
+	Tex1 sol.jpg
+	PosTex1 U 0.000 V 0.000
+	DeltaTex1 U 255.000 V 255.000
+
+Material BRASS 
+	Couleur Solid R 255 V 255 B 255 A 255
+	2side
+	Shading Rien
+	Transp Add
+	Tex1 rayon.jpg
+	PosTex1 U 0.000 V 0.000
+	DeltaTex1 U 63.000 V 121.500
+
+Material color1:2 
+	Couleur Solid R 255 V 255 B 255 A 255
+	Shading Gouraud
+	Tex1 cailloux.jpg
+	PosTex1 U 0.000 V 0.000
+	DeltaTex1 U 255.000 V 255.000
+
+Material Default 
+	Couleur Solid R 255 V 255 B 255 A 255
+	Shading Gouraud
+	Tex1 cailloux.jpg
+	PosTex1 U 0.000 V 0.000
+	DeltaTex1 U 255.000 V 255.000
+
+EndTXM
+<>

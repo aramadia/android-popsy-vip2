@@ -1,0 +1,54 @@
+//--------------------------------------------------------------------------
+//            +-------------------------------------+
+//            |                                     |
+//            | Bibliotheque de Material pour U3D3  |
+//            |                                     |
+//            |                     U2^PoPsY TeAm   |
+//            +-------------------------------------+
+//--------------------------------------------------------------------------
+//--------------------------------------------------------------------------
+
+
+//--------------------------------------
+//			Texture List
+//--------------------------------------
+
+Repertoire Datas/meshes/Plans/
+
+Open map1.jpg
+
+TileTex
+Open paroie.jpg
+
+
+//--------------------------------------
+// Liste des materials
+//--------------------------------------
+
+Material BIG 
+	Couleur Solid R 255 V 255 B 255 A 255
+	2side
+	Shading Rien
+	Transp AAdd
+	Tex1 map1.jpg
+	PosTex1 U 0.000 V 0.000
+	DeltaTex1 U 255.000 V 255.000
+
+Material Default 
+	Couleur Solid R 255 V 255 B 255 A 255
+	2side
+	Shading Rien
+	Transp AAdd
+	Tex1 map1.jpg
+	PosTex1 U 0.000 V 0.000
+	DeltaTex1 U 255.000 V 255.000
+
+Material PAROIE 
+	Couleur Solid R 255 V 255 B 255 A 255
+	Shading Rien
+	Tex1 paroie.jpg
+	PosTex1 U 0.000 V 0.000
+	DeltaTex1 U 511.000 V 31.000
+
+EndTXM
+<>

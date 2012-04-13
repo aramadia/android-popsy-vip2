@@ -1,0 +1,71 @@
+//--------------------------------------------------------------------------
+//            +-------------------------------------+
+//            |                                     |
+//            | Bibliotheque de Material pour U3D3  |
+//            |                                     |
+//            |                     U2^PoPsY TeAm   |
+//            +-------------------------------------+
+//--------------------------------------------------------------------------
+//--------------------------------------------------------------------------
+
+
+//--------------------------------------
+// Liste des images necessaires
+//--------------------------------------
+
+Repertoire Datas/meshes/nebuleuse/
+
+Open etoiles.jpg
+Open neb2.jpg
+Open neb1.jpg
+
+
+//--------------------------------------
+// Liste des materials
+//--------------------------------------
+
+Material Default 
+	Couleur Solid R 255 V 255 B 255 A 255
+	Shading Flat
+
+Material ESPACEX 
+	Couleur Solid R 255 V 255 B 255 A 255
+	Shading Flat
+	Tex1 etoiles.jpg
+	PosTex1 U 0.000 V 0.000
+	DeltaTex1 U 511.000 V 511.000
+
+Material ESPACEY 
+	Couleur Solid R 255 V 255 B 255 A 255
+	Shading Flat
+	Tex1 etoiles.jpg
+	PosTex1 U 0.000 V 0.000
+	DeltaTex1 U 511.000 V 511.000
+
+Material ESPACEZ 
+	Couleur Solid R 255 V 255 B 255 A 255
+	Shading Flat
+	Tex1 etoiles.jpg
+	PosTex1 U 0.000 V 0.000
+	DeltaTex1 U 511.000 V 511.000
+
+Material NEB1 
+	Couleur Solid R 255 V 255 B 255 A 255
+	2side
+	Shading Rien
+	Transp Add
+	Tex1 neb1.jpg
+	PosTex1 U 0.000 V 0.000
+	DeltaTex1 U 255.000 V 255.000
+
+Material NEB2 
+	Couleur Solid R 255 V 255 B 255 A 255
+	2side
+	Shading Rien
+	Transp Add
+	Tex1 neb2.jpg
+	PosTex1 U 0.000 V 0.000
+	DeltaTex1 U 255.000 V 255.000
+
+EndTXM
+<>
