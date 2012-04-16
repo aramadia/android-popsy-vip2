@@ -188,6 +188,8 @@ void ObjetU3D::LoadPolys( CArchive &ar )
 		Ptab[a].arrete = tmp8	;
 
 		ar >> tmp8						;
+		// dont be so sneaky, because the compiler complains
+		Ptab[a].index = tmp8	;
 		Ptab[a].m = (MaterialU3D*)tmp8	;		// attention astuce de cow boy
 	}
 }
@@ -215,7 +217,7 @@ void ObjetU3D::LoadMats( CArchive &ar )
 		//----------------------- assigne GOOD pointeur de material sur chaque poly
 		for( U32 a=0; a<nbpolys; a++ )
 		{
-			i = (U8)Ptab[a].m	;
+			i = (U8)Ptab[a].index	;
 
 			if( (i==255) || (i>=nb) )	Ptab[a].m = U3D3Monde3D->GetOrCreateMat( "Default" )	;
 			else						Ptab[a].m = mtab[ i ]									;

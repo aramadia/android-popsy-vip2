@@ -135,6 +135,7 @@ struct PolygonU3D{
 	U32 arrete	;	// flag décrivant les arrètes visibles
 	U32 flag	;	// flag utile pour le pipeline de rendu
 
+	U8 index;
 	MaterialU3D *m	;	// op un chti material pour le poly
 
 	PolygonU3D *suiv	;	// polygone suivant

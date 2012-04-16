@@ -243,7 +243,7 @@ void CilsSpheres::Affiche( Ufloat time, Ufloat laptime )
 		AffParti( 0.0f, 0.0f, 0.0f, 35.f )	;
 
 		AllBoule->ResetPoilsParcours()	;
-		for( U32 a=0; a<AllBoule->GetNbPoils(); a++ )
+		for( U32 i=0; i<AllBoule->GetNbPoils(); i++ )
 		{
 			Ufloat x,y,z,a	;
 

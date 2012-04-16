@@ -26,6 +26,9 @@ OBJS=Sources/BPeloche.o Sources/BSplineAff.o Sources/CilsBack.o   \
 	Sources/XGrezilles.o Sources/linuxcompat.o		  \
 	Sources/main.o Sources/glwindow.o Sources/mp3.o		  \
 	Sources/linux_oss.o
+
+SOURCES := $(OBJS:.o=.cpp)
+
 U3DOBJS=LIBS/u3dLib/sources/2Dstuff.o LIBS/u3dLib/sources/Bitmap.o  \
 	LIBS/u3dLib/sources/Boundings.o LIBS/u3dLib/sources/Bsp.o   \
 	LIBS/u3dLib/sources/BSpline.o LIBS/u3dLib/sources/BTree.o   \
@@ -58,14 +61,14 @@ MPGOBJS=LIBS/mpglib/common.o LIBS/mpglib/dct64_i386.o LIBS/mpglib/decode_i386.o 
 	LIBS/mpglib/interface.o LIBS/mpglib/layer3.o		    \
 	LIBS/mpglib/tabinit.o
 
-CC=gcc
-CXX=g++
-CFLAGS=-O3 -march=pentiumpro -fomit-frame-pointer -ffast-math
-CXXFLAGS=$(CFLAGS)
+CC=clang
+CXX=clang++
+FLAGS=-O2
+CPPFLAGS=-IInclude -ILIBS/u3dLib/include -ILIBS/mpglib
+CXXFLAGS=$(CFLAGS) $(CPPFLAGS)
 LDFLAGS=
 
 all: vip2
-CPPFLAGS=-IInclude -ILIBS/u3dLib/include -ILIBS/mpglib
 
 clean:
 	$(RM) $(OBJS) $(U3DOBJS) $(MPGOBJS) libu3d.a libmpg.a vip2
@@ -78,5 +81,6 @@ libmpg.a: $(MPGOBJS)
 	ar rc libmpg.a $(MPGOBJS)
 	ranlib libmpg.a
 
+
 vip2: $(OBJS) libu3d.a libmpg.a
-	$(CXX) -o vip2 libu3d.a $(OBJS) libu3d.a libmpg.a -lGL -lGLU -ljpeg -L/usr/X11R6/lib -lXxf86vm
+	$(CXX) -o vip2 $(SOURCES) $(CPPFLAGS) -L. -lu3d -lmpg -lGL -lGLU -ljpeg -L/usr/X11R6/lib -lXxf86vm

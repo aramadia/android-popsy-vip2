@@ -29,10 +29,14 @@ typedef char *LPCSTR;
 
 #include "OSspec.h"
 
+#include <stdlib.h>
 #include <stdio.h>
 
 extern "C" {
+	//jpeglib defines a INT32 but it is defined in xmd.h
+	#define XMD_H
 	#include "jpeglib.h"		// depuis Include de la JpegLib
+	#undef XMD_H
 }
 #include "Types.h"
 #include "Emess.h"
