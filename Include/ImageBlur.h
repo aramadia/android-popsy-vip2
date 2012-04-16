@@ -13,7 +13,7 @@
 
 //////////////////////////////////////////
 class UImageBlur{
-	
+
 //-------------------- Datas
 private:
 
@@ -30,7 +30,7 @@ private:
 
 //-------------------- Fonctions
 public:
-	
+
 
 	UImageBlur( U32 nbBlur, LPCSTR nomTex, U32 flagopenTex=BILINEAR_TEXTURE, Ufloat natWidth=0.0f, Ufloat natHeight = 0.0f  )	;
 	~UImageBlur()																													;
@@ -78,7 +78,7 @@ public:
 	void InterpoZoom( Ufloat debut, Ufloat fin, Ufloat time )	;
 	void InterpoAngle( Ufloat debut, Ufloat fin, Ufloat time )	;
 
-	bool IsEnable()			{tab[0]->IsEnable();}
+	bool IsEnable()			{return tab[0]->IsEnable();}
 	bool IsInterpoAlpha()	;
 	bool IsInterpoXPos()	;
 	bool IsInterpoYPos()	;

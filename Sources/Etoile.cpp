@@ -26,7 +26,7 @@ ObjDeformation*	EtoilePart::EtoileDef = NULL	;
 EtoileScale*	EtoilePart::Scale = NULL		;
 EtoileGreets*	EtoilePart::Greets = NULL		;
 UImage*			EtoilePart::Fondu = NULL		;
-U32				EtoilePart::TextePos = NULL		;
+U32				EtoilePart::TextePos = 0		;
 bool			EtoilePart::FirstTime = TRUE	;
 Udouble			EtoilePart::LapTime = 0.0f		;
 Udouble			EtoilePart::LastTime = 0.0f		;
@@ -56,7 +56,7 @@ void EtoilePart::PreLoad()
 void WINAPI	EtoilePart::Initialise(UScheduler *sche, U32 user)
 {
 
-	
+
 	for( Monde->IniObjIterator(); Monde->GetObjFromIterator(); Monde->IncObjIterator() )
 	{
 		if( strcmp( Monde->GetObjFromIterator()->GetNom(), "zarb" )==0 )

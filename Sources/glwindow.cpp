@@ -30,11 +30,11 @@ void GLWindow::resize(int x, int y, int w, int h)
 		y += (h - new_h) / 2;
 		h = new_h;
 	}
- 
+
 	glViewport(x, y, w, h);
 }
 
-GLWindow::GLWindow(char *title, int width, int height, int bpp, bool fullscreen, int zbuffer, int visual_id)
+GLWindow::GLWindow(const char *title, int width, int height, int bpp, bool fullscreen, int zbuffer, int visual_id)
 {
 	XVisualInfo *vi;
 	int dpyWidth = 0, dpyHeight = 0;
@@ -47,7 +47,7 @@ GLWindow::GLWindow(char *title, int width, int height, int bpp, bool fullscreen,
 	unsigned int borderDummy;
 
 	static int attrList[] = {
- 		GLX_RGBA, 
+ 		GLX_RGBA,
 		GLX_RED_SIZE, 1,
 		GLX_GREEN_SIZE, 1,
 		GLX_BLUE_SIZE, 1,
@@ -64,7 +64,7 @@ GLWindow::GLWindow(char *title, int width, int height, int bpp, bool fullscreen,
 	this->fullscreen = fullscreen;
 	this->zbuffer = zbuffer;
 	this->done = 0;
-	
+
 	/* set best mode to current */
 	bestMode = 0;
 
@@ -95,7 +95,7 @@ GLWindow::GLWindow(char *title, int width, int height, int bpp, bool fullscreen,
 	if (visual_id != -1) {
 		XVisualInfo tmplate;
 		int nret;
-		
+
 		tmplate.visualid = visual_id;
 		vi = XGetVisualInfo(this->dpy, VisualIDMask, &tmplate, &nret);
 		if (vi == NULL) {
@@ -135,10 +135,10 @@ GLWindow::GLWindow(char *title, int width, int height, int bpp, bool fullscreen,
 		XFreePixmap(this->dpy, blank);
 		this->attr.cursor = cursor;
 	}
-		
+
 	this->attr.border_pixel = 0;
 
-	/* change screen mode */	
+	/* change screen mode */
 	if (fullscreen) {
 		XF86VidModeSwitchToMode(this->dpy, this->screen, modes[bestMode]);
 		XF86VidModeSetViewPort(this->dpy, this->screen, 0, 0);

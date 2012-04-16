@@ -10,9 +10,9 @@
 #ifndef _emess_U3D3_H_
 #define _emess_U3D3_H_
 
-void FatalError(char *text)						;
-void DebugOutput(char *text)						;
-void ErrorMess( char* format, ...)			;
-void DebugErrorMess( char* format, ... )	;
+void FatalError(const char *text)						;
+void DebugOutput(const char *text)						;
+void ErrorMess( const char* format, ...)			;
+void DebugErrorMess( const char* format, ... )	;
 
 #endif

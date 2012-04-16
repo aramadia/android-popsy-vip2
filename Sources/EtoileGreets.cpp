@@ -182,7 +182,7 @@ void EtoileGreets::AfficheFore( Ufloat laptime )
 	Temps += laptime	;
 
 /*	Cote1->GetMaterial()->SetTex1Pos( 0.0f, -Temps, 1.0f, 1.0f )		;
-	Cote2->GetMaterial()->SetTex1Pos( 0.0f, -Temps+.5f, 1.0f, 1.0f )	;
+	Cote2->GetMaterial()->SetTex1Pos( 0.0f, -Temps+.5f, 1.0f, 1.0f )	;*/
 
 /*	Cote1->Affiche( laptime )	;
 	Cote2->Affiche( laptime )	;*/

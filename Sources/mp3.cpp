@@ -3,7 +3,7 @@
 
 #include "mp3.h"
 
-MP3AudioProvider::MP3AudioProvider(char *filename)
+MP3AudioProvider::MP3AudioProvider(const char *filename)
 {
 	this->fle = fopen(filename, "r");
 	if (fle == NULL) {

@@ -2,7 +2,7 @@
 					  |				         Scheduler.cpp							|
 					  |																|
 					  |	c'est lui ki va réguler le lancement des différentes taches	|
-					  |																|
+					  |	it is he who will solve the launch of different tasks	|
 					  | 	U2^PoPsy TeAm 2000										|
 					  +-------------------------------------------------------------*/
 
@@ -128,7 +128,7 @@ void UScheduler::SuspendAllTask()
 	{
 		tmp->suspendu = TRUE	;
 		tmp = tmp->suiv			;
-	}	
+	}
 }
 //----------------------------------------------------------------------------------------------------------
 void UScheduler::ReScheduleTask( LPCSTR nom )
@@ -149,7 +149,7 @@ void UScheduler::ReScheduleAllTask()
 	{
 		tmp->suspendu = FALSE	;
 		tmp = tmp->suiv			;
-	}	
+	}
 }
 //----------------------------------------------------------------------------------------------------------
 void UScheduler::KillActuaTask()
@@ -222,6 +222,6 @@ void UScheduler::Run()
 		ActuaTask = ActuaTask->suiv	;
 	}
 
-	KillAllDeadTask()	; // voit si il fo killer des taches mortes 
+	KillAllDeadTask()	; // voit si il fo killer des taches mortes
 }
 //----------------------------------------------------------------------------------------------------------

@@ -13,11 +13,11 @@
 #include <GL/gl.h>
 #include "glut.h"
 
-#define APIENTRY 
+#define APIENTRY
 
 class Viewport	;	// from Camera.h
 
-//--------------------------- Extention OpenGL pour le multi texturing 
+//--------------------------- Extention OpenGL pour le multi texturing
 
 typedef void (APIENTRY * PROCMULTITEXCOORD2DFARB) (GLenum target, GLfloat u, GLfloat v)		;
 typedef void (APIENTRY * PROCACTIVETEXTUREARB) (GLenum target)								;
@@ -102,6 +102,6 @@ void CopyBackToFrontBuffer()																;
 void SetViewportOpenGL( Viewport &vi )														;
 
 // va afficher un text aux coordonnées ecrans x,y
-void TextOpenGL(GLuint x, GLuint y, GLuint scale, char* format, ...)	;
+void TextOpenGL(GLuint x, GLuint y, GLuint scale, const char* format, ...)	;
 
 #endif

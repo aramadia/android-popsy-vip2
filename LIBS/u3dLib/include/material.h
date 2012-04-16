@@ -52,7 +52,7 @@ class MaterialU3D{
 
 public:
 
-	MaterialU3D(char *n)	;
+	MaterialU3D( const char *n)	;
 	~MaterialU3D()			;
 
 	MaterialU3D& operator=( MaterialU3D& mat )	;

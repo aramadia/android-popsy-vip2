@@ -28,7 +28,7 @@ public:
 
 	void SetSize( BTreeElem *liste )	;	// devient la boite englobante de tout les elements passés dans la liste
 
-	bool IsTerminal()	{ poly? TRUE : FALSE;}
+	bool IsTerminal()	{ return poly;}
 
 	bool WicheXSide( Ufloat x )	;	// renvoie TRUE si majoritairement au dessus
 	bool WicheYSide( Ufloat y )	;	// renvoie TRUE si majoritairement au dessus

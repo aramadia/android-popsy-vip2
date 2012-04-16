@@ -17,13 +17,13 @@
 //								+---------------------+
 //----------------------------------------------------------------------------------------------------------
 
-void OutputDebugString(char *str)
+void OutputDebugString(const char *str)
 {
 	printf("%s\n", str);
 }
 
 //----------------------------------------------------------------------------------------------------------
-void FatalError( LPCSTR text )
+void FatalError( const char *text )
 {
 	fprintf(stderr, "Fatal error: %s\n", text);
 	exit(-1)																;
@@ -34,7 +34,7 @@ void DebugOutput( LPCSTR text )
     OutputDebugString( text )	;
 }
 //----------------------------------------------------------------------------------------------------------
-void ErrorMess( char* format, ... )
+void ErrorMess( const char* format, ... )
 {
     va_list	args		;
     char	buffer[255]	;
@@ -46,7 +46,7 @@ void ErrorMess( char* format, ... )
     fprintf(stderr, "Error: %s\n", buffer);
 }
 //----------------------------------------------------------------------------------------------------------
-void DebugErrorMess( char* format, ... )
+void DebugErrorMess( const char* format, ... )
 {
     va_list	args		;
     char	buffer[255]	;

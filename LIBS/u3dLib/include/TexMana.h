@@ -68,7 +68,7 @@ public:
 	static bool			Exist( TextureU3D *tex  )		;	// renvoie TRUE sur texture presente
 
 	static void		SetRepertoire( LPCSTR nom )	{free(Repertoir);Repertoir = strdup(nom);}
-	static LPCSTR	GetRepertoire()				{}
+	static LPCSTR	GetRepertoire()				{return Repertoir;}
 
 	//----------------- ouvre le fichier depuis le Carchive et l'ajoute dans la liste des textures
 	static TextureU3D*	OpenRaw( CArchive &ar, LPCSTR nom, U32 x, U32 y, U32 Texflag=TILE_TEXTURE|BILINEAR_TEXTURE )	;	// Note : pour TexFlag se référé a la class TextureU3D
@@ -87,7 +87,7 @@ public:
 	static void LoadAll()	;		// Load toutes les textures dans la carte 3D
 	static void DeleteAll()	;		// detruit toute les texture du manager
 
-	//--------- Fonction pour le parcours des texture de la base	
+	//--------- Fonction pour le parcours des texture de la base
 	static void			IniIterator()				{IteratorPos=Liste;}		// ini l'iterateur pour parcourir toutes les texture de la base
 	static void			IncIterator()				{IteratorPos=IteratorPos->suiv;}
 	static TextureU3D*	GetFromIterator()			{return IteratorPos? IteratorPos->tex : NULL;}

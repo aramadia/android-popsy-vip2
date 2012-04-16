@@ -170,13 +170,13 @@ bool MondeU3D::LoadU3D( LPCSTR nom )
 {
 	std::vector<char>*	array	;
 	FILE *file = fopen(nom, "r");
-	
+
 	if( file ) {
 		try
 		{
 			CArchive ar(file)	;
-	
-			if( !Serialize( ar ) ) 
+
+			if( !Serialize( ar ) )
 			{
 				fprintf(stderr, "<U3D> Error loading %s U3D file\n", nom );
 				exit(-1);
@@ -295,7 +295,7 @@ void MondeU3D::AddElem(MaterialU3D *mat)
 	m = new ListeMaterialU3D( mat, ListeMat );
 	TestPtr( m );
 	ListeMat = m;
-}	
+}
 //----------------------------------------------------------------------------------------------------------
 MaterialU3D *MondeU3D::GetMat( LPCSTR nom )
 {
@@ -345,7 +345,7 @@ void MondeU3D::SetAllSpecular( bool b )
 void MondeU3D::AddElem(Camera *cam)
 {
 	ListeCameraU3D *c;
-	
+
 	c= new ListeCameraU3D( cam, ListeCam );
 	ListeCam = c;
 }
@@ -363,7 +363,7 @@ void MondeU3D::AddElem(ObjetU3D *obj)
 	{
 		ObjetU3D	*Otmp = GetObjet( obj->GetParent() )					;
 		if( Otmp )	Otmp->AddFils( obj )									;
-		else FatalError( "1 objet na pas trouvé son parent ( ho nan!!)" )	;
+		else FatalError( "1 objet na pas trouve son parent ( ho nan!!)" )	;
 	}
 }
 //----------------------------------------------------------------------------------------------------------
@@ -431,7 +431,7 @@ void MondeU3D::SetActualCamera(U32 nb)
 //----------------------------------------------------------------------------------------------------------
 void MondeU3D::SetActualCamera(LPCSTR nom)
 {
-	SetActualCamera( GetCamera(nom) )	;	
+	SetActualCamera( GetCamera(nom) )	;
 }
 //----------------------------------------------------------------------------------------------------------
 // va calculer la new image du monde3D non d'un petit bonhomme
@@ -555,7 +555,7 @@ void MondeU3D::ConstructAllObjStaticLighting()
 void MondeU3D::AddElem(LightU3D *light)
 {
 	ListeLightU3D *l	;
-	
+
 	l = new ListeLightU3D( light, ListeLight )	;
 	ListeLight = l								;
 }
@@ -615,7 +615,7 @@ void MondeU3D::IniAnim()
 	}
 
 
-	//----------------- Ini Objets 
+	//----------------- Ini Objets
 	while( Otmp )
 	{
 		if( Otmp->obj->IsAnimated() )
@@ -640,7 +640,7 @@ void MondeU3D::IncAnim( float v )
 		Ctmp->cam->IncAnim( v )	;
 		Ctmp = Ctmp->suiv		;
 	}
-	
+
 	//----------------- Incrémente Animaton de light
 	while( Ltmp	)
 	{
@@ -648,7 +648,7 @@ void MondeU3D::IncAnim( float v )
 		Ltmp = Ltmp->suiv			;
 	}
 
-	//----------------- Inicrémente Animation Objets 
+	//----------------- Inicrémente Animation Objets
 	while( Otmp )
 	{
 		if( Otmp->obj->IsAnimated() )
@@ -657,7 +657,7 @@ void MondeU3D::IncAnim( float v )
 	}
 }
 //----------------------------------------------------------------------------------------------------------
-// renvoie TRUE si le segment coupe un poly du monde 
+// renvoie TRUE si le segment coupe un poly du monde
 bool MondeU3D::SegmentIntersecPoly( Ufloat debut[3], Ufloat fin[3] )
 {
 	U32				a = 0			;

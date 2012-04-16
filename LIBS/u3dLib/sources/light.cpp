@@ -32,8 +32,8 @@ LightU3D::LightU3D()
 	Outer = 1000.f		;
 
 	vec3_set( Targ, 0.0f, 0.0f, 100.f )	;
-	Hotspot = .7853981634				;	// Hotspot a 45 degré par defaut 
-	Falloff = 1.570796327				;	// Falloff a 90 degré par defaut 
+	Hotspot = .7853981634				;	// Hotspot a 45 degré par defaut
+	Falloff = 1.570796327				;	// Falloff a 90 degré par defaut
 
 	Spos = NULL		;
 	Starg = NULL	;
@@ -188,7 +188,7 @@ void LightU3D::CalcGouraudStaticLighting( Ufloat *dest, ObjetU3D *obj  )
 //----------------------------------------------------------------------------------------------------------
 // va calculer le lighting pour l'objet
 // TODO : - OPTIMISER grave ces fonctions paskeu la c'est TROP TROP pas bien !!!!!!!!!!!
-//		  - peut etre gérer le Falloff&Hotspot pour le spot justement 
+//		  - peut etre gérer le Falloff&Hotspot pour le spot justement
 void LightU3D::CalcLightingRealTime( ObjetU3D *obj )
 {
 	Ufloat	TrPos[3]		;
@@ -213,7 +213,7 @@ void LightU3D::CalcLightingRealTime( ObjetU3D *obj )
 		{
 			vec3_eg( vLightObj, TrPos )	;
 			vec3_normalize( vLightObj )	;
-/*		}
+		}
 		else if( Type== TYPE_LIGHT_SPOT )
 		{
 			vec3_eg( vLightObj, Vec )	;
@@ -241,7 +241,7 @@ void LightU3D::CalcLightingRealTime( ObjetU3D *obj )
 				if( dist > Inner )
 					val *= 1.f - (dist-Inner) / ( Outer-Inner )	;	// calcul dustance atténuation
 			}
-			
+
 			vec3_mul( p, TrRVB, val )							;
 			vec3_add( obj->Ptab[a].RVBA, obj->Ptab[a].RVBA, p )	;	// op additionne valeur de lighting !
 		}
@@ -308,7 +308,7 @@ void LightU3D::IniAnim()
 		Starg->GetVal( Targ )	;
 		Normalize()				;
 	}
-	if( Scolor )	
+	if( Scolor )
 	{
 		Scolor->Ini()			;
 		Scolor->GetVal( RVB )	;
@@ -328,7 +328,7 @@ void LightU3D::IncAnim( Ufloat laptime )
 		Starg->GetVal( Targ )		;
 		Normalize()					;
 	}
-	if( Scolor )	
+	if( Scolor )
 	{
 		Scolor->IncPos( laptime )	;
 		Scolor->GetVal( RVB )		;

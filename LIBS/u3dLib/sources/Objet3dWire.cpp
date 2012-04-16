@@ -34,7 +34,7 @@ CoordObjWire::~CoordObjWire()
 void CoordObjWire::AddPloly( PolygonU3D* p )
 {
 	PolyObjWireList*	tmp	;
-	
+
 	tmp = new PolyObjWireList	;
 	tmp->poly = p				;
 	tmp->suiv = allpoly			;
@@ -191,7 +191,7 @@ Objet3dWire::Objet3dWire()
 	listeCoord = NULL	;
 	tabPoly = NULL	;
 	tabWire = NULL	;
-	NbLigne = NULL	;
+	NbLigne = 0	;
 
 	vec3_set( PosVolumeLight, 0.0f, 0.0f, 0.0f )	;
 	TailleVolumeLight = 0.0f						;
@@ -295,7 +295,7 @@ void Objet3dWire::Construct( ObjetU3D *obj )
 
 	CreateTabs( obj )	;
 
-	//------------------------------ créé toutes les lignes 
+	//------------------------------ créé toutes les lignes
 	poly = tabPoly	;
 	count = 0		;
 	for( a=0; a<obj->nbpolys; a++,poly++ )

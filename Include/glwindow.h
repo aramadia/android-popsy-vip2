@@ -18,14 +18,14 @@ class PBuffer_RTT;
 
 class GLWindow {
 public:
-	GLWindow(char *title, int width, int height, int bpp, bool fullscreen, int zbuffer, int visual_id);
+	GLWindow(const char *title, int width, int height, int bpp, bool fullscreen, int zbuffer, int visual_id);
 	~GLWindow();
 	void resize(int x, int y, int w, int h);
 	void flip();
 	bool is_done();
 
 	friend class PBuffer_RTT;
-	
+
 protected:
 #ifdef WIN32
 	HDC hDC;
@@ -41,8 +41,8 @@ protected:
 	XSetWindowAttributes attr;
 	Bool fs;
 	XF86VidModeModeInfo deskMode;
-#endif						    
-	
+#endif
+
 	char *title;
 	bool fullscreen;
 	int x, y;

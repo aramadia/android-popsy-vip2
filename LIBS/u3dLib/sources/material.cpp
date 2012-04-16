@@ -19,7 +19,7 @@
 //----------------------------------------------------------------------------------------------------------
 //											MaterialU3D
 //----------------------------------------------------------------------------------------------------------
-MaterialU3D::MaterialU3D(LPCSTR n)
+MaterialU3D::MaterialU3D(const char *n)
 {
 	nom = strdup(n)	;
 
@@ -92,7 +92,7 @@ void MaterialU3D::Confirm()
 	MatPipe = (void*)U3D3Pipeline->GetOrCreate( this )				;
 }
 //----------------------------------------------------------------------------------------------------------
-void MaterialU3D::SetTransp( U32 tr )	
+void MaterialU3D::SetTransp( U32 tr )
 {
 	Transparence1 = tr	;
 }
@@ -186,12 +186,12 @@ void MaterialU3D::Serialize( CArchive &ar )
 	{
 		// ecrit nom material
 		sprintf(tmp, "Material %s \15\n", nom);
-		ar.WriteString( (LPCSTR)tmp )					;
+		ar.WriteString(tmp )					;
 
 		// ecrit couleur Solid
 		sprintf(tmp, "	Couleur Solid R %d V %d B %d A %d\15\n", (
 					U32)(RVBA[0]*255.f), (U32)(RVBA[1]*255.f),(U32)(RVBA[2]*255.f), (U32)(RVBA[3]*255.f)	)	;
-		ar.WriteString( (LPCSTR)tmp )												;
+		ar.WriteString(tmp )												;
 
 		// ecrit si 2side
 		if( Side2 )
@@ -214,7 +214,7 @@ void MaterialU3D::Serialize( CArchive &ar )
 				break;
 		}
 
-		// ecrit transparence 
+		// ecrit transparence
 		switch( Transparence1 )
 		{
 			case MatTranspAdd :
@@ -242,21 +242,21 @@ void MaterialU3D::Serialize( CArchive &ar )
 		{
 			iTex++																									;
 			sprintf(tmp, "	Tex1 %s\15\n", TextureManager::GetNom( Tex1 ) )											;
-			ar.WriteString( (LPCSTR)tmp )																			;	
+			ar.WriteString( tmp )																			;
 			sprintf(tmp, "	PosTex1 U %2.3f V %2.3f\15\n", Xstart1*(Tex1->Width()-1), Ystart1*(Tex1->Height()-1) )	;
-			ar.WriteString( (LPCSTR)tmp )																			;
+			ar.WriteString( tmp )																			;
 			sprintf(tmp, "	DeltaTex1 U %2.3f V %2.3f\15\n", Xdelta1*(Tex1->Width()-1), Ydelta1*(Tex1->Height()-1) )	;
-			ar.WriteString( (LPCSTR)tmp )																			;
+			ar.WriteString( tmp )																			;
 		}
 		if( Tex2 )
 		{
 			iTex++																											;
 			sprintf(tmp, "	Tex%d %s\15\n", iTex, TextureManager::GetNom( Tex2 ) )											;
-			ar.WriteString( (LPCSTR)tmp )																					;
+			ar.WriteString( tmp )																					;
 			sprintf(tmp, "	PosTex%d U %2.3f V %2.3f\15\n", iTex, Xstart2*(Tex2->Width()-1), Ystart2*(Tex2->Height()-1) )	;
-			ar.WriteString( (LPCSTR)tmp )																					;
+			ar.WriteString( tmp )																					;
 			sprintf(tmp, "	DeltaTex%d U %2.3f V %2.3f\15\n", iTex, Xdelta2*(Tex2->Width()-1), Ydelta2*(Tex2->Height()-1) )	;
-			ar.WriteString( (LPCSTR)tmp )																					;
+			ar.WriteString( tmp )																					;
 		}
 		if( iTex==2 )
 		{
