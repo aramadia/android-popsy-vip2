@@ -1,47 +1,47 @@
-	   				 /*-------------------------------------------------------------------------+
-					  |							FinalSpline.h									|
-					  |																			|
-					  |		je vasi tracer des Bspline les long des lettres de VIP2 na ! 		|
-					  |																			|
-					  | 	U2^PoPsy TeAm 2000													|
-					  +-------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------+
+ |                          FinalSpline.h                                   |
+ |                                                                          |
+ |      je vasi tracer des Bspline les long des lettres de VIP2 na !        |
+ |                                                                          |
+ |  U2^PoPsy TeAm 2000                                                  |
+ +-------------------------------------------------------------------------*/
 
 #ifndef _FINALSPLINE_VIP2_H
 #define _FINALSPLINE_VIP2_H
 
 /////////////////////////////////////////
-class FinalOneSpline{
+class FinalOneSpline {
 
 //--------------- Datas
 private:
 
-	ObjetU3D* obj ;
+    ObjetU3D* obj;
 
-	U32	IndexDepart		;
-	U32	IncrementIndex	;
+    U32 IndexDepart;
+    U32 IncrementIndex;
 
-	BSplinaeAff*	spline	;
+    BSplinaeAff*    spline;
 
-	Ufloat TimeReste	;
-	Ufloat ActuaTime	;
+    Ufloat TimeReste;
+    Ufloat ActuaTime;
 
 public:
 
-	FinalOneSpline* suiv	;
+    FinalOneSpline* suiv;
 
 //--------------- Fonctions
 private:
 
-	void AssignKey()	;
-	
+    void AssignKey();
+
 public:
 
-	FinalOneSpline( ObjetU3D* obj )	;
-	~FinalOneSpline()				;
+    FinalOneSpline(ObjetU3D* obj);
+    ~FinalOneSpline();
 
-	void SeAlpha( Ufloat a )	;
-	
-	void UpdateFrame( Ufloat laptime )	;
+    void SeAlpha(Ufloat a);
+
+    void UpdateFrame(Ufloat laptime);
 };
 /////////////////////////////////////////
 
@@ -50,25 +50,25 @@ public:
 
 
 /////////////////////////////////////////
-class FinalSpline{
+class FinalSpline {
 
 //--------------- Datas
 private:
 
-	FinalOneSpline* AllSpline	;
+    FinalOneSpline* AllSpline;
 
-	Ufloat TAppear		;
-	Ufloat actuatime	;
+    Ufloat TAppear;
+    Ufloat actuatime;
 
 //--------------- Fonctions
 public:
 
-	FinalSpline( MondeU3D* monde )	;
-	~FinalSpline()					;
+    FinalSpline(MondeU3D* monde);
+    ~FinalSpline();
 
-	void Appear( Ufloat time )	;
+    void Appear(Ufloat time);
 
-	void UpdateFrame( Ufloat laptime )	;
+    void UpdateFrame(Ufloat laptime);
 };
 /////////////////////////////////////////
 

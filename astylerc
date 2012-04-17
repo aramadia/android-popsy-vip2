@@ -1,0 +1,7 @@
+--style=java
+--align-pointer=type
+--convert-tabs
+--lineend=linux
+--suffix=none
+--unpad-paren
+--pad-header

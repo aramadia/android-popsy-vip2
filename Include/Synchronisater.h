@@ -1,53 +1,53 @@
-    				 /*-------------------------------------------------------------+
-					  |				         Synchronisater.h						|
-					  |																|
-					  |	C'est lui ki va s'occuper de gérer les callback de synchros	|
-					  |																|
-					  | 	U2^PoPsy TeAm 2000										|
-					  +-------------------------------------------------------------*/
+/*-------------------------------------------------------------+
+ |                       Synchronisater.h                       |
+ |                                                              |
+ |  C'est lui ki va s'occuper de gérer les callback de synchros |
+ |                                                              |
+ |  U2^PoPsy TeAm 2000                                      |
+ +-------------------------------------------------------------*/
 
 #ifndef _SYNCHRONISATER_H_
 #define _SYNCHRONISATER_H_
 
 
-class SynchroTick	;
+class SynchroTick;
 
 
 
 //////////////////////////////////////////
 // definition d'un synchro callback
 
-typedef void (* PROCSYNCCALLBACK)(SynchroTick *sync, Ufloat relativeTime, U32 syncNum, U32 user)	;
+typedef void (* PROCSYNCCALLBACK)(SynchroTick* sync, Ufloat relativeTime, U32 syncNum, U32 user);
 
-class SynchroCallback{
+class SynchroCallback {
 
 //-------------- type
 public:
 
-	enum{
-		onecall,	// appel 1 seule fois la fonction
-		multicall	// appel la fonctions kan temps >= temps de la synchro
-	};
+    enum {
+        onecall,    // appel 1 seule fois la fonction
+        multicall   // appel la fonctions kan temps >= temps de la synchro
+    };
 
 
 //-------------- Datas
 private:
 
-	PROCSYNCCALLBACK	Procs	;
-	U32					Type	;
-	bool				Call	;	// est mis a TRUE kan callback au moins appelé 1 fois 
+    PROCSYNCCALLBACK    Procs;
+    U32                 Type;
+    bool                Call;   // est mis a TRUE kan callback au moins appelé 1 fois
 
 public:
 
-	SynchroCallback	*suiv	;
+    SynchroCallback* suiv;
 
 
 //-------------- Fonctions
 public:
 
-	SynchroCallback( PROCSYNCCALLBACK procs, U32 type=onecall )	;
+    SynchroCallback(PROCSYNCCALLBACK procs, U32 type=onecall);
 
-	void Run( SynchroTick *sync, Ufloat rtime, U32 syncNum )	;
+    void Run(SynchroTick* sync, Ufloat rtime, U32 syncNum);
 };
 //////////////////////////////////////////
 
@@ -58,29 +58,29 @@ public:
 
 //////////////////////////////////////////
 // définition d'une synchro dans le temps
-class SynchroTick{
+class SynchroTick {
 
 //---------------- Datas
 private:
 
-	SynchroCallback	*AllCallback	;
+    SynchroCallback* AllCallback;
 
 public:
 
-	U32		Id		;	// un numero identificateur
-	Ufloat	Tpos	;	// une position dans le temps
+    U32     Id; // un numero identificateur
+    Ufloat  Tpos;   // une position dans le temps
 
-	SynchroTick	*suiv	;
+    SynchroTick* suiv;
 
 //---------------- Fonctions
 public:
 
-	SynchroTick( U32 number, Ufloat pos )	;
-	~SynchroTick()							;
+    SynchroTick(U32 number, Ufloat pos);
+    ~SynchroTick();
 
-	void AddCalBack( PROCSYNCCALLBACK procs, U32 type=SynchroCallback::onecall )	;
+    void AddCalBack(PROCSYNCCALLBACK procs, U32 type=SynchroCallback::onecall);
 
-	void Run( Ufloat time )	;
+    void Run(Ufloat time);
 
 };
 //////////////////////////////////////////
@@ -91,34 +91,38 @@ public:
 
 //////////////////////////////////////////
 // définition d'une phase de synchro
-class SynchroPhase{
+class SynchroPhase {
 
 //----------------- Datas
 private:
 
-	CString nom	;
+    CString nom;
 
-	Ufloat	TStart	;	// temps ou la phase démare
-	Ufloat	TEnd	;	// temps ou la phase s'arrete
+    Ufloat  TStart; // temps ou la phase démare
+    Ufloat  TEnd;   // temps ou la phase s'arrete
 
-	SynchroTick	*AllTick	;	// tout les temps de synchros
+    SynchroTick* AllTick;   // tout les temps de synchros
 
 public:
 
-	SynchroPhase*	suiv	;
+    SynchroPhase*   suiv;
 
 //----------------- Fonctions
 public:
 
-	SynchroPhase( LPCSTR nom, Ufloat start, Ufloat end )	;
-	~SynchroPhase()											;
+    SynchroPhase(LPCSTR nom, Ufloat start, Ufloat end);
+    ~SynchroPhase();
 
-	Ufloat GetStartTime()	{return TStart;}
-	Ufloat GetEndTime()		{return TEnd;}
+    Ufloat GetStartTime()   {
+        return TStart;
+    }
+    Ufloat GetEndTime()     {
+        return TEnd;
+    }
 
-	SynchroTick* AddTick( U32 number, Ufloat tpos, PROCSYNCCALLBACK procs, U32 type=SynchroCallback::onecall )	;
+    SynchroTick* AddTick(U32 number, Ufloat tpos, PROCSYNCCALLBACK procs, U32 type=SynchroCallback::onecall);
 
-	void Run( Ufloat time )	;
+    void Run(Ufloat time);
 };
 //////////////////////////////////////////
 
@@ -127,22 +131,22 @@ public:
 
 //////////////////////////////////////////
 // défintion du synchronisater
-class USynchronisater{
+class USynchronisater {
 
 //----------------- Datas
 private:
 
-	SynchroPhase*	AllPhase	;
+    SynchroPhase*   AllPhase;
 
 //----------------- Fonctions
 public:
 
-	USynchronisater()	;
-	~USynchronisater()	;
+    USynchronisater();
+    ~USynchronisater();
 
-	SynchroPhase*	AddPhase( LPCSTR nom, Ufloat start, Ufloat end  )	;
+    SynchroPhase*   AddPhase(LPCSTR nom, Ufloat start, Ufloat end);
 
-	void Run()	;
+    void Run();
 
 };
 //////////////////////////////////////////

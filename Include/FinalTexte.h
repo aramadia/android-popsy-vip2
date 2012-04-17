@@ -1,36 +1,36 @@
-	   				 /*-------------------------------------------------------------------------+
-					  |							FinalTexte.h									|
-					  |																			|
-					  |		affichage des quelques derniers graphs de textes de la demo ho ho	|
-					  |																			|
-					  | 	U2^PoPsy TeAm 2000													|
-					  +-------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------+
+ |                          FinalTexte.h                                    |
+ |                                                                          |
+ |      affichage des quelques derniers graphs de textes de la demo ho ho   |
+ |                                                                          |
+ |  U2^PoPsy TeAm 2000                                                  |
+ +-------------------------------------------------------------------------*/
 
 #ifndef _FINALTEXTE_VIP2_H
 #define _FINALTEXTE_VIP2_H
 
 /////////////////////////////////////////
-class FinalTexte{
-	
+class FinalTexte {
+
 //--------------- Datas
 private:
 
-	UImage* Url		;
-	UImage* UrlAdd	;
-	UImage* FScroll	;
-	UImage*	Fondu	;
+    UImage* Url;
+    UImage* UrlAdd;
+    UImage* FScroll;
+    UImage* Fondu;
 
 //--------------- Fonctions
 public:
 
-	FinalTexte()	;
-	~FinalTexte()	;
+    FinalTexte();
+    ~FinalTexte();
 
-	void GoUrl()	;
-	void GoScroll()	;
-	void GoFondu()	;
+    void GoUrl();
+    void GoScroll();
+    void GoFondu();
 
-	void UpdateFrame( Ufloat laptime )	;
+    void UpdateFrame(Ufloat laptime);
 };
 /////////////////////////////////////////
 

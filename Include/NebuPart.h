@@ -1,11 +1,11 @@
-    				 /*-----------------------------------------------------+
-					  |				        NebuPart.h						|
-					  |														|
-					  |	Va gérer le champ de particule de la nebuleuse de	|
-					  |						la 1ere partie					|
-					  |														|
-					  | 	U2^PoPsy TeAm 2000								|
-					  +-----------------------------------------------------*/
+/*-----------------------------------------------------+
+ |                      NebuPart.h                      |
+ |                                                      |
+ |  Va gérer le champ de particule de la nebuleuse de   |
+ |                      la 1ere partie                  |
+ |                                                      |
+ |  U2^PoPsy TeAm 2000                              |
+ +-----------------------------------------------------*/
 
 #ifndef _NEBUPART_VIP2_H
 #define _NEBUPART_VIP2_H
@@ -13,27 +13,35 @@
 
 /////////////////////////////////////////
 // defintion d'une petite particule
-class OneNebuParticule{
+class OneNebuParticule {
 
 //--------------- Datas
 private:
 
-	SplineU3D	*mouvement	;
-	Ufloat		RVBA[4]		;
-	Ufloat		size		;
+    SplineU3D*   mouvement;
+    Ufloat      RVBA[4];
+    Ufloat      size;
 
 
 //-------------- Fonctions
 public:
 
-	OneNebuParticule()	;
-	~OneNebuParticule()	;
+    OneNebuParticule();
+    ~OneNebuParticule();
 
-	void Move( Ufloat step )	{mouvement->IncPos( step );}
+    void Move(Ufloat step) {
+        mouvement->IncPos(step);
+    }
 
-	void	GetPos( Ufloat vec[3] )	{mouvement->GetVal(vec);}
-	Ufloat*	GetColor()				{return RVBA;}
-	Ufloat	GetSize()				{return size;}
+    void    GetPos(Ufloat vec[3])  {
+        mouvement->GetVal(vec);
+    }
+    Ufloat* GetColor()              {
+        return RVBA;
+    }
+    Ufloat  GetSize()               {
+        return size;
+    }
 };
 /////////////////////////////////////////
 
@@ -42,34 +50,34 @@ public:
 
 /////////////////////////////////////////
 // definition la classe ki va gérer les particules
-class Nebuparticule{
+class Nebuparticule {
 
 //--------------- Datas
 private:
 
-	TextureU3D	*partTex	;	// image de la particule de base
-	MaterialU3D	*partMat	;	// material de la particule de base
-	BitmapU3D	*partBmp	;	// bitmpa de la particule
+    TextureU3D*  partTex;   // image de la particule de base
+    MaterialU3D* partMat;   // material de la particule de base
+    BitmapU3D*   partBmp;   // bitmpa de la particule
 
-	UImage*	Explodeima	;
+    UImage* Explodeima;
 
-	OneNebuParticule	*AllPart	;	// tout les particules
+    OneNebuParticule*    AllPart;   // tout les particules
 
-	Ufloat centreX,centreY	;	// coord 2D du centre de la nebuleuse !
+    Ufloat centreX,centreY;   // coord 2D du centre de la nebuleuse !
 
 //-------------- Fonctions
 private:
 
-	void AffBigPart()				;	// affiche grosse particule centrale
-	void AffAllPart( Ufloat step )	;	// affiche le champ de particules
+    void AffBigPart();   // affiche grosse particule centrale
+    void AffAllPart(Ufloat step);     // affiche le champ de particules
 
 public:
 
-	Nebuparticule( LPCSTR nomTex, LPCSTR nomTexEx )		;
-	~Nebuparticule()					;
+    Nebuparticule(LPCSTR nomTex, LPCSTR nomTexEx);
+    ~Nebuparticule();
 
-	void Explode( Ufloat time )		;
-	void UpdateFrame( Ufloat step )	;
+    void Explode(Ufloat time);
+    void UpdateFrame(Ufloat step);
 };
 /////////////////////////////////////////
 
@@ -78,25 +86,29 @@ public:
 
 /////////////////////////////////////////
 // definit un rayon ki ira sur la nebuleuse avant lexplosion
-class OneNebuRayon{
+class OneNebuRayon {
 
 //--------------- Datas
 private:
 
-	Ufloat vec[3]		;
-	Ufloat dist			;
-	Ufloat taille		;
-	Ufloat timeToGo		;
-	Ufloat totalTime	;
+    Ufloat vec[3];
+    Ufloat dist;
+    Ufloat taille;
+    Ufloat timeToGo;
+    Ufloat totalTime;
 
 //-------------- Fonctions
 public:
 
-	OneNebuRayon()	;
+    OneNebuRayon();
 
-	void Ini()															;
-	bool Move( Ufloat step )											{timeToGo-=step;if(timeToGo<0.0f) return FALSE; else return TRUE;}	
-	void GetVal( Ufloat debut[3], Ufloat fin[3], Ufloat &intensity )	;	// retourne intensité du rayon
+    void Ini();
+    bool Move(Ufloat step)                                         {
+        timeToGo-=step;
+        if (timeToGo<0.0f) return FALSE;
+        else return TRUE;
+    }
+    void GetVal(Ufloat debut[3], Ufloat fin[3], Ufloat& intensity);     // retourne intensité du rayon
 };
 /////////////////////////////////////////
 
@@ -104,22 +116,22 @@ public:
 
 /////////////////////////////////////////
 // classe ki va gérer tout les rayons
-class NebuRayon{
+class NebuRayon {
 
 //--------------- Datas
 private:
 
-	OneNebuRayon*	AllRayon	;
-	Ufloat			TimeToGo	;
-	Ufloat			TotalTime	;
+    OneNebuRayon*   AllRayon;
+    Ufloat          TimeToGo;
+    Ufloat          TotalTime;
 
 //-------------- Fonctions
 public:
 
-	NebuRayon( Ufloat tappear )		;
-	~NebuRayon()					;
+    NebuRayon(Ufloat tappear);
+    ~NebuRayon();
 
-	void UpdateFrame( Ufloat step )	;
+    void UpdateFrame(Ufloat step);
 };
 /////////////////////////////////////////
 

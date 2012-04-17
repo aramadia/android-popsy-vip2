@@ -5,7 +5,7 @@
 typedef unsigned int U32;
 typedef unsigned short U16;
 typedef unsigned char U8;
-typedef char *LPCSTR;
+typedef char* LPCSTR;
 
 #define TRUE true
 #define FALSE false

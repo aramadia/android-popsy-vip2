@@ -1,18 +1,18 @@
-    				 /*---------------------------------------------------------+
-					  |				      vip2Headers.h							|
-					  |															|
-					  |	   tout les headers nécessaires a la demo ( po po po )	|
-					  |															|
-					  | 	U2^PoPsy TeAm 2000									|
-					  +--------------------------------------------------------*/
+/*---------------------------------------------------------+
+ |                    vip2Headers.h                         |
+ |                                                          |
+ |     tout les headers nécessaires a la demo ( po po po )  |
+ |                                                          |
+ |  U2^PoPsy TeAm 2000                                  |
+ +--------------------------------------------------------*/
 
 #ifndef _VIP2HEADERS_H_
 #define _VIP2HEADERS_H_
 
-#define FRAMEPERSECOND	30.	// nombre de frame jouées par secondes kan on play une scene U3D 
+#define FRAMEPERSECOND  30. // nombre de frame jouées par secondes kan on play une scene U3D
 
-#define DEFAULT_SCREEN_X	640		// coord X par defaut de l'ecran
-#define DEFAULT_SCREEN_Y	480		// coord Y par defaut de l'ecran
+#define DEFAULT_SCREEN_X    640     // coord X par defaut de l'ecran
+#define DEFAULT_SCREEN_Y    480     // coord Y par defaut de l'ecran
 
 #include "U3D3.h"
 
@@ -111,9 +111,9 @@
 #define FINAL_TIME_END 197.836f
 
 
-extern Udouble			LaunchTime	;	// le temps ou la demo a démarré
-extern USynchronisater*	AllSynchro	;	// toute les synchros de la demo
-extern OSSAudioDriver *mp3;
+extern Udouble          LaunchTime;   // le temps ou la demo a démarré
+extern USynchronisater* AllSynchro;   // toute les synchros de la demo
+extern OSSAudioDriver* mp3;
 
 //-------- Interface
 #include <math.h>

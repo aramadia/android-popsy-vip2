@@ -1,38 +1,38 @@
-    				 /*-------------------------------------------------------------+
-					  |				         Scheduler.h							|
-					  |																|
-					  |	c'est lui ki va réguler le lancement des différentes taches	|
-					  |																|
-					  | 	U2^PoPsy TeAm 2000										|
-					  +-------------------------------------------------------------*/
+/*-------------------------------------------------------------+
+ |                       Scheduler.h                            |
+ |                                                              |
+ |  c'est lui ki va réguler le lancement des différentes taches |
+ |                                                              |
+ |  U2^PoPsy TeAm 2000                                      |
+ +-------------------------------------------------------------*/
 
 #ifndef _SCHEDULER_H_
 #define _SCHEDULER_H_
 
 
-class UScheduler	;
+class UScheduler;
 
 
 //////////////////////////////////////////
 // definit une tache du scheduler
 
-typedef void (*PROCUTASK)(UScheduler *sche, U32 user)	;
+typedef void (*PROCUTASK)(UScheduler* sche, U32 user);
 
-class UTask{
+class UTask {
 
 //--------- Datas
 public:
 
-	CString		nom			;
-	PROCUTASK	procs		;
-	bool		suspendu	;	// la tache est-elle suspendue ?
-	bool		mustDie		;	// la tache doit mourirrr !
-	UTask*		suiv		;
+    CString     nom;
+    PROCUTASK   procs;
+    bool        suspendu;   // la tache est-elle suspendue ?
+    bool        mustDie;    // la tache doit mourirrr !
+    UTask*      suiv;
 
 //--------- Fonctions
 public:
 
-	UTask()	;
+    UTask();
 
 };
 //////////////////////////////////////////
@@ -42,38 +42,38 @@ public:
 
 //////////////////////////////////////////
 // definit le Scheduler lui meme
-class UScheduler{
+class UScheduler {
 
 //----------- Datas
 private:
 
-	UTask	*AllTask	;
-	UTask	*LastTask	;
-	UTask	*ActuaTask	;
+    UTask*   AllTask;
+    UTask*   LastTask;
+    UTask*   ActuaTask;
 
 //----------- Fonctions
 private:
 
-	UTask	*Find( LPCSTR nom )	;
-	void	SetLast()			;
+    UTask*   Find(LPCSTR nom);
+    void    SetLast();
 
 public:
 
-	UScheduler()	;
-	~UScheduler()	;
+    UScheduler();
+    ~UScheduler();
 
-	void AddTask( LPCSTR nom, PROCUTASK	procs )	;
+    void AddTask(LPCSTR nom, PROCUTASK  procs);
 
-	void SuspendTask( LPCSTR nom )				;
-	void SuspendAllTask()						;
-	void ReScheduleTask( LPCSTR nom )			;
-	void ReScheduleAllTask()					;
+    void SuspendTask(LPCSTR nom);
+    void SuspendAllTask();
+    void ReScheduleTask(LPCSTR nom);
+    void ReScheduleAllTask();
 
-	void KillActuaTask()						;
-	void KillTask( LPCSTR nom )					;
-	void KillAllDeadTask()						;
+    void KillActuaTask();
+    void KillTask(LPCSTR nom);
+    void KillAllDeadTask();
 
-	void Run()	;
+    void Run();
 
 };
 //////////////////////////////////////////

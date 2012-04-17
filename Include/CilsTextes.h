@@ -1,43 +1,43 @@
-	   				 /*-------------------------------------------------------------------------+
-					  |								CilsTextes.h								|
-					  |																			|
-					  |	Affichage d'une grosse quantité de d'enormes textes a l'ecran poil de   |
-					  |									vent									|
-					  |																			|
-					  | 	U2^PoPsy TeAm 2000													|
-					  +-------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------+
+ |                              CilsTextes.h                                |
+ |                                                                          |
+ |  Affichage d'une grosse quantité de d'enormes textes a l'ecran poil de   |
+ |                                  vent                                    |
+ |                                                                          |
+ |  U2^PoPsy TeAm 2000                                                  |
+ +-------------------------------------------------------------------------*/
 
 #ifndef _CILSTEXTES_VIP2_H
 #define _CILSTEXTES_VIP2_H
 
 /////////////////////////////////////////
-class CilsTextes{
+class CilsTextes {
 
 //--------------- Datas
 private:
 
-	UImage** Salvation	;
-	UImage** Temptation	;
-	UImage** Disinfo	;
-	UImage** Testi		;
-	UImage** Freedom	;
+    UImage** Salvation;
+    UImage** Temptation;
+    UImage** Disinfo;
+    UImage** Testi;
+    UImage** Freedom;
 
-	UImage* dates	;
+    UImage* dates;
 
 //--------------- fonctions
 private:
 
-	void GereXImage( UImage* ima, Ufloat laptime, bool right  )	;
-	void GereYImage( UImage* ima, Ufloat laptime, bool haut  )		;
+    void GereXImage(UImage* ima, Ufloat laptime, bool right);
+    void GereYImage(UImage* ima, Ufloat laptime, bool haut);
 
 public:
 
-	CilsTextes()	;
-	~CilsTextes()	;
+    CilsTextes();
+    ~CilsTextes();
 
-	void Disappear( Ufloat time )	;
+    void Disappear(Ufloat time);
 
-	void UpdateFrame( Ufloat laptime )	;
+    void UpdateFrame(Ufloat laptime);
 };
 /////////////////////////////////////////
 

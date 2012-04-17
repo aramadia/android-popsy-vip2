@@ -3,54 +3,56 @@
 
 #include <stdio.h>
 
-typedef const char * LPCSTR;
+typedef const char* LPCSTR;
 
-/* quick and dirty hacked MFC replacement classes ;-) */
+/* quick and dirty hacked MFC replacement classes;-) */
 class CString {
 private:
-	char *str;
+    char* str;
 
 public:
-	CString();
-	operator char *();
-	void operator= (const char *blah);
-	bool operator== (LPCSTR blah);
-	void Empty();
+    CString();
+    operator char* ();
+    void operator= (const char* blah);
+    bool operator== (LPCSTR blah);
+    void Empty();
 };
 class CArchive {
 private:
-	FILE *file;
+    FILE* file;
 
 public:
-	CArchive(FILE *);
-	void Close();
+    CArchive(FILE*);
+    void Close();
 
-	bool IsStoring() { return false; }
+    bool IsStoring() {
+        return false;
+    }
 
-	void operator>> (char *&blah);
-	void operator<< (char *&blah) {}
+    void operator>> (char*& blah);
+    void operator<< (char*& blah) {}
 
-	void operator>> (CString &blah);
-	void operator<< (CString &blah) {}
+    void operator>> (CString& blah);
+    void operator<< (CString& blah) {}
 
-	void operator>> (float &blah);
-	void operator<< (float &blah) {}
+    void operator>> (float& blah);
+    void operator<< (float& blah) {}
 
-	void operator>> (bool &blah);
-	void operator<< (bool &blah) {}
+    void operator>> (bool& blah);
+    void operator<< (bool& blah) {}
 
-	void operator>> (unsigned char &blah);
-	void operator<< (unsigned char &blah) {}
+    void operator>> (unsigned char& blah);
+    void operator<< (unsigned char& blah) {}
 
-	void operator>> (unsigned short &blah);
-	void operator<< (unsigned short &blah) {}
+    void operator>> (unsigned short& blah);
+    void operator<< (unsigned short& blah) {}
 
-	void operator>> (unsigned int &blah);
-	void operator<< (unsigned int &blah) {}
+    void operator>> (unsigned int& blah);
+    void operator<< (unsigned int& blah) {}
 
-	void WriteString(const char *blah);
-	void Read(unsigned char *buf, int num_bytes);
-	int ReadString(char *blah, int num_bytes);
+    void WriteString(const char* blah);
+    void Read(unsigned char* buf, int num_bytes);
+    int ReadString(char* blah, int num_bytes);
 };
 
 #endif

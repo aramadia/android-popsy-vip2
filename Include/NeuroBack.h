@@ -1,37 +1,37 @@
-	   			 /*---------------------------------------------------------------------+
-				  |				         NeuroBack.h									|
-				  |																		|
-				  |			affichage d'un léger fond  pour la scene des neuronnes		|
-				  |																		|
-				  | 	U2^PoPsy TeAm 2000												|
-				  +---------------------------------------------------------------------*/
+/*---------------------------------------------------------------------+
+ |                       NeuroBack.h                                    |
+ |                                                                      |
+ |          affichage d'un léger fond  pour la scene des neuronnes      |
+ |                                                                      |
+ |  U2^PoPsy TeAm 2000                                              |
+ +---------------------------------------------------------------------*/
 
 #ifndef _NEUROBACK_VIP2_H
 #define _NEUROBACK_VIP2_H
 
 /////////////////////////////////////////
-class NeuroBackground{
+class NeuroBackground {
 
 //--------------- Datas
 private:
 
-	UImage*	DestroyBar		;
-	UImage*	CleanTexte		;
-	UImage*	DestroyTexte	;
-	UImage*	Nenfants		;
+    UImage* DestroyBar;
+    UImage* CleanTexte;
+    UImage* DestroyTexte;
+    UImage* Nenfants;
 
-	Ufloat totaltime	;
+    Ufloat totaltime;
 
 //--------------- Fonctions
 public:
 
-	NeuroBackground()	;
-	~NeuroBackground()	;
+    NeuroBackground();
+    ~NeuroBackground();
 
-	void Appear( Ufloat time )		;
-	void Disappear( Ufloat time )	;
+    void Appear(Ufloat time);
+    void Disappear(Ufloat time);
 
-	void UpdateFrame( Ufloat laptime )	;
+    void UpdateFrame(Ufloat laptime);
 
 };
 /////////////////////////////////////////

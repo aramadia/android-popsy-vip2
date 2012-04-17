@@ -1,11 +1,11 @@
-    				 /*-----------------------------------------------------+
-					  |				         OpenGl.h						|
-					  |														|
-					  |		c'est qq fonctions qui me permettent de gérer   |
-					  |				l'OpenGl dans le moteur tridé héhé		|
-					  |														|
-					  | 	U2^PoPsy TeAm 1999								|
-					  +-----------------------------------------------------*/
+/*-----------------------------------------------------+
+ |                       OpenGl.h                       |
+ |                                                      |
+ |      c'est qq fonctions qui me permettent de gérer   |
+ |              l'OpenGl dans le moteur tridé héhé      |
+ |                                                      |
+ |  U2^PoPsy TeAm 1999                              |
+ +-----------------------------------------------------*/
 
 #ifndef _OpenGL_U3D3_H
 #define _OpenGL_U3D3_H
@@ -15,17 +15,17 @@
 
 #define APIENTRY
 
-class Viewport	;	// from Camera.h
+class Viewport;   // from Camera.h
 
 //--------------------------- Extention OpenGL pour le multi texturing
 
-typedef void (APIENTRY * PROCMULTITEXCOORD2DFARB) (GLenum target, GLfloat u, GLfloat v)		;
-typedef void (APIENTRY * PROCACTIVETEXTUREARB) (GLenum target)								;
+typedef void (APIENTRY* PROCMULTITEXCOORD2DFARB)(GLenum target, GLfloat u, GLfloat v);
+typedef void (APIENTRY* PROCACTIVETEXTUREARB)(GLenum target);
 
-//extern PROCACTIVETEXTUREARB		glActiveTextureARB	;
-//extern PROCMULTITEXCOORD2DFARB	glMultiTexCoord2fARB;
-//#define glActiveTexture			(*glActiveTextureARB)
-//#define glMultiTexCoord2f		(*glMultiTexCoord2fARB)
+//extern PROCACTIVETEXTUREARB       glActiveTextureARB;
+//extern PROCMULTITEXCOORD2DFARB    glMultiTexCoord2fARB;
+//#define glActiveTexture           (*glActiveTextureARB)
+//#define glMultiTexCoord2f     (*glMultiTexCoord2fARB)
 
 
 /* ARB_multitexture */
@@ -90,18 +90,18 @@ typedef void (APIENTRY * PROCACTIVETEXTUREARB) (GLenum target)								;
 
 
 //-------------------------- Op la des fonctions bien utiles
-//HGLRC EnableOpenGL( HWND hWnd=NULL, HDC dc=NULL, bool HighColor=TRUE, bool HighZbuf=TRUE )	;	// ini openGL pour moteur 3D ! renvoie le contexte
-//void DisableOpenGL( bool real=FALSE )														;	// si real est a TRUA alors on release pas le DC courant de hWndMain
-void EnableFogOpenGL()																		;
-void DisableFogOpenGL()																		;
-void FlipOpenGL()																			;
-void ClearOpenGLZbuffer()																	;
-void ClearOpenGLBuffers()																	;	// efface ecran et Zbuffer
-void CopyBackToFrontBuffer()																;
-//void SetActualOpenGLContext( HGLRC hglrc, HDC dc )											;
-void SetViewportOpenGL( Viewport &vi )														;
+//HGLRC EnableOpenGL( HWND hWnd=NULL, HDC dc=NULL, bool HighColor=TRUE, bool HighZbuf=TRUE );   // ini openGL pour moteur 3D ! renvoie le contexte
+//void DisableOpenGL( bool real=FALSE );   // si real est a TRUA alors on release pas le DC courant de hWndMain
+void EnableFogOpenGL();
+void DisableFogOpenGL();
+void FlipOpenGL();
+void ClearOpenGLZbuffer();
+void ClearOpenGLBuffers();   // efface ecran et Zbuffer
+void CopyBackToFrontBuffer();
+//void SetActualOpenGLContext( HGLRC hglrc, HDC dc );
+void SetViewportOpenGL(Viewport& vi);
 
 // va afficher un text aux coordonnées ecrans x,y
-void TextOpenGL(GLuint x, GLuint y, GLuint scale, const char* format, ...)	;
+void TextOpenGL(GLuint x, GLuint y, GLuint scale, const char* format, ...);
 
 #endif

@@ -18,39 +18,39 @@ class PBuffer_RTT;
 
 class GLWindow {
 public:
-	GLWindow(const char *title, int width, int height, int bpp, bool fullscreen, int zbuffer, int visual_id);
-	~GLWindow();
-	void resize(int x, int y, int w, int h);
-	void flip();
-	bool is_done();
+    GLWindow(const char* title, int width, int height, int bpp, bool fullscreen, int zbuffer, int visual_id);
+    ~GLWindow();
+    void resize(int x, int y, int w, int h);
+    void flip();
+    bool is_done();
 
-	friend class PBuffer_RTT;
+    friend class PBuffer_RTT;
 
 protected:
 #ifdef WIN32
-	HDC hDC;
-	HGLRC hRC;
-	HWND hWnd;
-	HINSTANCE hInstance;
+    HDC hDC;
+    HGLRC hRC;
+    HWND hWnd;
+    HINSTANCE hInstance;
 #endif
 #ifdef __linux__
-	Display *dpy;
-	int screen;
-	Window win;
-	GLXContext ctx;
-	XSetWindowAttributes attr;
-	Bool fs;
-	XF86VidModeModeInfo deskMode;
+    Display* dpy;
+    int screen;
+    Window win;
+    GLXContext ctx;
+    XSetWindowAttributes attr;
+    Bool fs;
+    XF86VidModeModeInfo deskMode;
 #endif
 
-	char *title;
-	bool fullscreen;
-	int x, y;
-	unsigned int width, height;
-	unsigned int bpp;
-	int zbuffer;
-	bool done;
-	void initGL();
+    char* title;
+    bool fullscreen;
+    int x, y;
+    unsigned int width, height;
+    unsigned int bpp;
+    int zbuffer;
+    bool done;
+    void initGL();
 };
 
 #endif
