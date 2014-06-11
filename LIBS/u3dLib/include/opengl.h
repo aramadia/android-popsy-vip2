@@ -10,8 +10,13 @@
 #ifndef _OpenGL_U3D3_H
 #define _OpenGL_U3D3_H
 
+#ifdef __APPLE__
+#include <OpenGL/gl.h>
+#include <GLUT/glut.h>
+#else
 #include <GL/gl.h>
 #include "glut.h"
+#endif
 
 #define APIENTRY
 

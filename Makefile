@@ -65,8 +65,11 @@ CC=clang
 CXX=clang++
 FLAGS=-O2
 CPPFLAGS=-IInclude -ILIBS/u3dLib/include -ILIBS/mpglib
-CXXFLAGS=$(CFLAGS) $(CPPFLAGS)
+OSXFLAGS=-I/usr/local/Cellar/jpeg/8d/include -I/usr/X11R6/include/
+CXXFLAGS=$(CFLAGS) $(CPPFLAGS) $(OSXFLAGS)
 LDFLAGS=
+
+# CXXCPP="g++ -E" CXX="g++ -arch i386 -arch x86_64" CPPFLAGS="-I/usr/X11/include -I/usr/X11/include/freetype2" LDFLAGS="-L/usr/X11/lib" ./configure --with-x --with-xft --with-opengl --x-includes=/usr/X11/include --x-libraries=/usr/X11/lib
 
 all: vip2
 

@@ -35,7 +35,12 @@ typedef const char* LPCSTR;
 extern "C" {
     //jpeglib defines a INT32 but it is defined in xmd.h
 #define XMD_H
+
+#ifdef __APPLE__
+#include <jpeglib.h>
+#else	
 #include "jpeglib.h"        // depuis Include de la JpegLib
+#endif
 #undef XMD_H
 }
 #include "Types.h"

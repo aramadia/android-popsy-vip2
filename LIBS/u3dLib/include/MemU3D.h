@@ -9,7 +9,12 @@
 #ifndef _MEMU3D_U3D3_H_
 #define _MEMU3D_U3D3_H_
 
+#ifdef __APPLE__
+
+#include <malloc/malloc.h>
+#else
 #include <malloc.h>
+#endif
 
 #define GetMemU3D(dest,nb,type)\
 { (dest)=(type*)malloc(sizeof(type)*(nb));\
