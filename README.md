@@ -9,5 +9,7 @@ A port of the popsy vip2 demo to android
 Libraries Required
 * OpenGL
 * GLUT
-* libjpeg
+* libjpeg (brew install libjpeg)
 * 
+
+-framework OpenGL
