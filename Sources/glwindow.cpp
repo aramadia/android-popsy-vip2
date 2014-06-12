@@ -3,15 +3,15 @@
 
 #include <unistd.h>
 
-#ifdef __APPLE__
-#include <GL/glx.h>
-#else
+// #ifdef __APPLE__
+// #include <GL/glx.h>
+// #else
 #include <GL/glx.h>
 #include <X11/extensions/xf86vmode.h>
 #include <X11/keysym.h>
 #include <GL/gl.h>
 #include <GL/glu.h>
-#endif
+// #endif
 
 #include "glwindow.h"
 

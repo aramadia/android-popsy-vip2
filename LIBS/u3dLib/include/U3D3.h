@@ -37,7 +37,7 @@ extern "C" {
 #define XMD_H
 
 #ifdef __APPLE__
-#include <jpeglib.h>
+#include "jpeglib.h"
 #else	
 #include "jpeglib.h"        // depuis Include de la JpegLib
 #endif

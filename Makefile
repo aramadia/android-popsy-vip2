@@ -64,8 +64,9 @@ MPGOBJS=LIBS/mpglib/common.o LIBS/mpglib/dct64_i386.o LIBS/mpglib/decode_i386.o 
 CC=clang
 CXX=clang++
 FLAGS=-O2
-CPPFLAGS=-IInclude -ILIBS/u3dLib/include -ILIBS/mpglib
-OSXFLAGS=-I/usr/local/Cellar/jpeg/8d/include -I/usr/X11R6/include/
+CPPFLAGS=-IInclude -ILIBS/u3dLib/include -ILIBS/mpglib -I/usr/local/Cellar/jpeg/8d/include -I/opt/X11/include
+OSXFLAGS=
+#-I/usr/local/Cellar/jpeg/8d/include -I/opt/X11/include
 CXXFLAGS=$(CFLAGS) $(CPPFLAGS) $(OSXFLAGS)
 LDFLAGS=
 
@@ -86,4 +87,7 @@ libmpg.a: $(MPGOBJS)
 
 
 vip2: $(OBJS) libu3d.a libmpg.a
-	$(CXX) -o vip2 $(SOURCES) $(CPPFLAGS) -L. -lu3d -lmpg -lGL -lGLU -ljpeg -L/usr/X11R6/lib -lXxf86vm
+	$(CXX) -o vip2 $(SOURCES) $(CPPFLAGS) -L. -lu3d -lmpg -framework OpenGL -framework GLUT -ljpeg -L/usr/local/Cellar/jpeg/8d/lib -L/usr/X11R6/lib -lX11 -lXxf86vm.1 -lGL -lGLU
+
+	#mac 	$(CXX) -o vip2 $(SOURCES) $(CPPFLAGS) -L. -lu3d -lmpg -lGL -lGLU -ljpeg -L/usr/X11R6/lib -lXxf86vm
+
